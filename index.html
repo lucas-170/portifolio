@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio | Social Media & Video Creator</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Custom Configuration -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            bg: '#09090b',
+                            card: '#121215',
+                            border: '#27272a',
+                            muted: '#a1a1aa'
+                        },
+                        accent: {
+                            purple: '#a855f7',
+                            pink: '#ec4899',
+                            cyan: '#06b6d4',
+                            emerald: '#10b981'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #09090b;
+            color: #f4f4f5;
+        }
+
+        /* Vercel Glowing Effect & Gradients */
+        .glow-effect {
+            position: relative;
+        }
+        .glow-effect::before {
+            content: '';
+            position: absolute;
+            top: -2px; left: -2px; right: -2px; bottom: -2px;
+            background: linear-gradient(45deg, #a855f7, #ec4899, #06b6d4);
+            border-radius: inherit;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .glow-effect:hover::before {
+            opacity: 0.6;
+            filter: blur(8px);
+        }
+
+        .bg-grid-pattern {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #09090b;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #27272a;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3f3f46;
+        }
+
+        /* Aspect Ratios */
+        .aspect-vertical {
+            aspect-ratio: 9 / 16;
+        }
+        .aspect-horizontal {
+            aspect-ratio: 16 / 9;
+        }
+
+        /* Hide scrollbar for clean UI */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-dark-bg text-zinc-100 min-h-screen flex flex-col antialiased selection:bg-purple-500 selection:text-white">
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-40 backdrop-blur-md bg-dark-bg/80 border-b border-dark-border transition-all">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Brand / Logo -->
+                <a href="#" class="flex items-center gap-2 group">
+                    <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-purple-600 via-pink-500 to-cyan-400 p-[1px] transition-transform duration-300 group-hover:scale-105">
+                        <div class="w-full h-full bg-dark-bg rounded-[7px] flex items-center justify-center">
+                            <i class="fa-solid font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 fa-play text-xs"></i>
+                        </div>
+                    </div>
+                    <span class="font-bold text-lg tracking-tight text-white group-hover:text-purple-400 transition-colors">CREATOR<span class="text-purple-500">.MEDIA</span></span>
+                </a>
+
+                <!-- Nav Links -->
+                <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                    <a href="#portfolio" class="text-zinc-400 hover:text-white transition-colors">Portfólio</a>
+                    <a href="#metricas" class="text-zinc-400 hover:text-white transition-colors">Resultados</a>
+                    <a href="#servicos" class="text-zinc-400 hover:text-white transition-colors">Serviços</a>
+                    <a href="#contato" class="text-zinc-400 hover:text-white transition-colors">Contato</a>
+                </nav>
+
+                <!-- CTA Button Header -->
+                <div>
+                    <a href="#contato" class="relative inline-flex items-center justify-center px-4 py-2 text-xs font-semibold text-white bg-zinc-900 border border-zinc-700 hover:border-purple-500 rounded-lg transition-all duration-300 hover:shadow-[0_0_15px_rgba(168,85,247,0.3)]">
+                        <span>Iniciar Projeto</span>
+                        <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative py-20 lg:py-28 overflow-hidden bg-grid-pattern border-b border-dark-border">
+        <!-- Radial Blur Effects -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-purple-600/15 blur-[120px] rounded-full pointer-events-none"></div>
+        <div class="absolute top-1/3 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[200px] bg-cyan-600/10 blur-[100px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <!-- Badge Status -->
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-purple-500/30 bg-purple-500/10 text-purple-300 text-xs font-medium mb-8 backdrop-blur-md">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                Disponível para novos projetos e marcas
+            </div>
+
+            <!-- Main Title -->
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-6 leading-[1.1]">
+                Transformando Vídeos em <br class="hidden sm:inline"/>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400">Retenção & Vendas</span>
+            </h1>
+
+            <!-- Subtitle/Bio -->
+            <p class="text-lg sm:text-xl text-zinc-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+                Editor de Vídeo & Estrategista de Social Media especialista em Reels, TikTok, YouTube Shorts e Anúncios de alta conversão. Foco total em hooks potentes, storytelling dinâmico e métricas reais.
+            </p>
+
+    <!-- Video Hub Section with Carousel -->
+    <section id="portfolio" class="py-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-10">
+            <span class="text-xs font-bold text-purple-400 uppercase tracking-widest">Showcase de Projetos</span>
+            <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mt-1 mb-3">Galeria de Trabalhos Em Destaque</h2>
+            <p class="text-zinc-400 max-w-xl mx-auto text-sm sm:text-base">
+                Navegue pelo carrossel para conferir amostras das edições estratégicas focadas em reter a audiência.
+            </p>
+        </div>
+
+        <!-- Category Filters -->
+        <div class="flex items-center justify-start sm:justify-center gap-2 overflow-x-auto pb-4 mb-8 no-scrollbar" id="filter-buttons">
+            <button data-filter="all" class="filter-btn active px-4 py-2 rounded-lg text-xs font-semibold transition-all whitespace-nowrap bg-purple-600 text-white border border-purple-500/50 shadow-lg shadow-purple-900/30">
+                Todos os Vídeos
+            </button>
+            <button data-filter="reels" class="filter-btn px-4 py-2 rounded-lg text-xs font-semibold transition-all whitespace-nowrap bg-zinc-900 text-zinc-400 border border-zinc-800 hover:border-zinc-700 hover:text-white">
+                <i class="fa-brands fa-instagram text-pink-400 mr-1.5"></i> Reels & TikTok
+            </button>
+            <button data-filter="shorts" class="filter-btn px-4 py-2 rounded-lg text-xs font-semibold transition-all whitespace-nowrap bg-zinc-900 text-zinc-400 border border-zinc-800 hover:border-zinc-700 hover:text-white">
+                <i class="fa-brands fa-youtube text-red-500 mr-1.5"></i> YouTube Shorts
+            </button>
+            <button data-filter="ads" class="filter-btn px-4 py-2 rounded-lg text-xs font-semibold transition-all whitespace-nowrap bg-zinc-900 text-zinc-400 border border-zinc-800 hover:border-zinc-700 hover:text-white">
+                <i class="fa-solid fa-bolt text-amber-400 mr-1.5"></i> Anúncios / Vendas
+            </button>
+            <button data-filter="motion" class="filter-btn px-4 py-2 rounded-lg text-xs font-semibold transition-all whitespace-nowrap bg-zinc-900 text-zinc-400 border border-zinc-800 hover:border-zinc-700 hover:text-white">
+                <i class="fa-solid fa-wand-magic-sparkles text-cyan-400 mr-1.5"></i> Motion & Dinâmico
+            </button>
+        </div>
+
+        <!-- Carousel Container -->
+        <div class="relative group/carousel px-1">
+            <!-- Navigation Arrow Left -->
+            <button id="prev-btn" class="absolute -left-3 sm:-left-5 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-zinc-900/90 border border-zinc-700/80 text-white flex items-center justify-center hover:bg-purple-600 hover:border-purple-500 hover:scale-110 backdrop-blur-md shadow-xl transition-all duration-300 disabled:opacity-30 disabled:hover:scale-100 disabled:hover:bg-zinc-900">
+                <i class="fa-solid fa-chevron-left text-sm"></i>
+            </button>
+
+            <!-- Navigation Arrow Right -->
+            <button id="next-btn" class="absolute -right-3 sm:-right-5 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-zinc-900/90 border border-zinc-700/80 text-white flex items-center justify-center hover:bg-purple-600 hover:border-purple-500 hover:scale-110 backdrop-blur-md shadow-xl transition-all duration-300 disabled:opacity-30 disabled:hover:scale-100 disabled:hover:bg-zinc-900">
+                <i class="fa-solid fa-chevron-right text-sm"></i>
+            </button>
+
+            <!-- Track Viewport -->
+            <div class="overflow-hidden py-4 px-1" id="carousel-viewport">
+                <!-- Track Strip (Flex container) -->
+                <div class="flex transition-transform duration-500 ease-out gap-6" id="carousel-track">
+                    <!-- Video Cards Injected Via JS -->
+                </div>
+            </div>
+
+            <!-- Dots Pagination -->
+            <div class="flex items-center justify-center gap-2 mt-6" id="carousel-dots">
+                <!-- Dots Injected Via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Metrics Section (Social Proof) -->
+    <section id="metricas" class="py-16 bg-zinc-950/60 border-y border-dark-border relative">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-xs font-bold text-purple-400 uppercase tracking-widest">Impacto em Números</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-white mt-1">Resultados Gerados para Clientes</h2>
+            </div>
+
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Metric Card 1 -->
+                <div class="p-6 rounded-2xl bg-zinc-900/50 border border-zinc-800/80 hover:border-purple-500/30 transition-all text-center">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mb-2">+12M</div>
+                    <div class="text-xs sm:text-sm font-medium text-zinc-300">Visualizações Acumuladas</div>
+                    <div class="text-[11px] text-zinc-500 mt-1">Orgânico e Pago em 2024</div>
+                </div>
+
+                <!-- Metric Card 2 -->
+                <div class="p-6 rounded-2xl bg-zinc-900/50 border border-zinc-800/80 hover:border-purple-500/30 transition-all text-center">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-amber-400 mb-2">+180</div>
+                    <div class="text-xs sm:text-sm font-medium text-zinc-300">Vídeos Editados</div>
+                    <div class="text-[11px] text-zinc-500 mt-1">Para Nichos Variados</div>
+                </div>
+
+                <!-- Metric Card 3 -->
+                <div class="p-6 rounded-2xl bg-zinc-900/50 border border-zinc-800/80 hover:border-purple-500/30 transition-all text-center">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-400 mb-2">+320%</div>
+                    <div class="text-xs sm:text-sm font-medium text-zinc-300">Aumento Médio em Retenção</div>
+                    <div class="text-[11px] text-zinc-500 mt-1">Aumento no tempo de tela</div>
+                </div>
+
+                <!-- Metric Card 4 -->
+                <div class="p-6 rounded-2xl bg-zinc-900/50 border border-zinc-800/80 hover:border-purple-500/30 transition-all text-center">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400 mb-2">98.5%</div>
+                    <div class="text-xs sm:text-sm font-medium text-zinc-300">Aprovação de Conteúdo</div>
+                    <div class="text-[11px] text-zinc-500 mt-1">Entregas no prazo e padrão alto</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="py-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <span class="text-xs font-bold text-cyan-400 uppercase tracking-widest">Especialidades</span>
+            <h2 class="text-3xl sm:text-4xl font-bold text-white mt-1">Como Posso Elevar seu Conteúdo</h2>
+            <p class="text-zinc-400 max-w-xl mx-auto text-sm sm:text-base mt-3">
+                Combinação estratégica de técnicas visuais modernas para manter a audiência presa até o último segundo.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Service 1 -->
+            <div class="p-8 rounded-2xl bg-zinc-900/40 border border-zinc-800/80 hover:border-purple-500/50 transition-all duration-300 group">
+                <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 mb-6 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-mobile-screen-button text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">Edição Vertical Dinâmica</h3>
+                <p class="text-zinc-400 text-sm leading-relaxed">
+                    Cortes precisos, sound design imersivo, legendas animadas estilo Hormozi/Vercel e efeito de zoom constante para Reels, TikTok e Shorts.
+                </p>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="p-8 rounded-2xl bg-zinc-900/40 border border-zinc-800/80 hover:border-pink-500/50 transition-all duration-300 group">
+                <div class="w-12 h-12 rounded-xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-pink-400 mb-6 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-bullseye text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">Vídeos para Anúncios (UGC/Ads)</h3>
+                <p class="text-zinc-400 text-sm leading-relaxed">
+                    Montagem estratégica de ganchos visuais nos primeiros 3 segundos, focados em conversão e VSLs dinâmicas para tráfego pago.
+                </p>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="p-8 rounded-2xl bg-zinc-900/40 border border-zinc-800/80 hover:border-cyan-500/50 transition-all duration-300 group">
+                <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-6 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-wand-magic-sparkles text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">Motion Graphics Leve</h3>
+                <p class="text-zinc-400 text-sm leading-relaxed">
+                    Elementos em movimento, transições estilizadas, gráficos animados e efeitos visuais pontuais para agregar alto valor percebido.
+                </p>
+            </div>
+
+            <!-- Service 4 -->
+            <div class="p-8 rounded-2xl bg-zinc-900/40 border border-zinc-800/80 hover:border-emerald-500/50 transition-all duration-300 group">
+                <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-6 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-lightbulb text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">Roteirização & Hooks</h3>
+                <p class="text-zinc-400 text-sm leading-relaxed">
+                    Auxílio na elaboração do conceito do vídeo, criação de ganchos verbais irresistíveis e adequação de linguagem para a rede social.
+                </p>
+            </div>
+
+            <!-- Service 5 -->
+            <div class="p-8 rounded-2xl bg-zinc-900/40 border border-zinc-800/80 hover:border-amber-500/50 transition-all duration-300 group">
+                <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 mb-6 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-sliders text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">Tratamento de Áudio & Cor</h3>
+                <p class="text-zinc-400 text-sm leading-relaxed">
+                    Limpeza de ruídos no mic, equalização de voz, escolha estratégica da trilha sonora e aplicação de Color Grading vibrante.
+                </p>
+            </div>
+
+            <!-- Service 6 -->
+            <div class="p-8 rounded-2xl bg-zinc-900/40 border border-zinc-800/80 hover:border-purple-500/50 transition-all duration-300 group">
+                <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 mb-6 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-calendar-check text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">Pacotes Mensais de Gestão</h3>
+                <p class="text-zinc-400 text-sm leading-relaxed">
+                    Parceria contínua para entrega de um volume fixo de vídeos semanais/mensais para manter o seu perfil sempre ativo.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / Footer Section -->
+    <footer id="contato" class="mt-auto border-t border-dark-border bg-zinc-950/80 py-16 relative">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
+                <div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">Vamos criar conteúdo <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">viral para sua marca?</span></h2>
+                    <p class="text-zinc-400 text-sm leading-relaxed max-w-md">
+                        Entre em contato diretamente pelas redes abaixo para orçamentos, parcerias ou análises rápidas do seu perfil.
+                    </p>
+                </div>
+
+                <!-- Fast Contact Buttons -->
+                <div class="flex flex-col gap-4">
+                    <a href="https://wa.me/5500000000000" target="_blank" class="p-4 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-emerald-500/50 transition-all flex items-center justify-between group">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center">
+                                <i class="fa-brands fa-whatsapp text-lg"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-zinc-400">Conversar via WhatsApp</div>
+                                <div class="text-sm font-semibold text-white group-hover:text-emerald-400 transition-colors">(11) 99999-9999</div>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-chevron-right text-zinc-600 group-hover:text-emerald-400 group-hover:translate-x-1 transition-all"></i>
+                    </a>
+
+                    <a href="mailto:seu-email@exemplo.com" class="p-4 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-purple-500/50 transition-all flex items-center justify-between group">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-purple-500/10 text-purple-400 flex items-center justify-center">
+                                <i class="fa-regular fa-envelope text-lg"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-zinc-400">Enviar E-mail Comercial</div>
+                                <div class="text-sm font-semibold text-white group-hover:text-purple-400 transition-colors">contato@seuportifolio.com</div>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-chevron-right text-zinc-600 group-hover:text-purple-400 group-hover:translate-x-1 transition-all"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="pt-8 border-t border-zinc-800/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
+                <div>
+                    © <span id="year"></span> Social Media Video Creator. Pronto para implantar no Vercel.
+                </div>
+                <div class="flex items-center gap-6">
+                    <a href="https://instagram.com" target="_blank" class="hover:text-white transition-colors"><i class="fa-brands fa-instagram text-base"></i></a>
+                    <a href="https://tiktok.com" target="_blank" class="hover:text-white transition-colors"><i class="fa-brands fa-tiktok text-base"></i></a>
+                    <a href="https://youtube.com" target="_blank" class="hover:text-white transition-colors"><i class="fa-brands fa-youtube text-base"></i></a>
+                    <a href="https://linkedin.com" target="_blank" class="hover:text-white transition-colors"><i class="fa-brands fa-linkedin text-base"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Video Player Modal -->
+    <div id="video-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="relative w-full max-w-4xl bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden shadow-2xl">
+            <!-- Modal Header -->
+            <div class="flex items-center justify-between p-4 border-b border-zinc-800 bg-zinc-950/60">
+                <div>
+                    <h3 id="modal-title" class="font-bold text-white text-base">Título do Vídeo</h3>
+                    <p id="modal-client" class="text-xs text-purple-400">Cliente / Marca</p>
+                </div>
+                <button id="close-modal" class="w-8 h-8 rounded-full bg-zinc-800 hover:bg-zinc-700 text-zinc-400 hover:text-white flex items-center justify-center transition-colors">
+                    <i class="fa-solid fa-xmark text-sm"></i>
+                </button>
+            </div>
+
+            <!-- Modal Video Content -->
+            <div class="relative bg-black flex items-center justify-center min-h-[300px] max-h-[75vh]" id="modal-video-container">
+                <!-- Video player injected dynamically -->
+            </div>
+
+            <!-- Modal Info Footer -->
+            <div class="p-4 border-t border-zinc-800 bg-zinc-950/40 flex flex-wrap items-center justify-between gap-4 text-xs">
+                <div id="modal-metric" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-purple-500/10 text-purple-300 font-semibold border border-purple-500/20">
+                    <i class="fa-solid fa-chart-line"></i> +500k Views
+                </div>
+                <p id="modal-desc" class="text-zinc-400 flex-1 px-2 line-clamp-2 sm:line-clamp-none">Descrição da estratégia de edição empregada no vídeo.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        const videoData = [
+            {
+                id: '1',
+                title: 'Cortes Dinâmicos & Legendas Efeito Hormozi',
+                client: 'Marca de Tecnologia',
+                category: 'reels',
+                aspect: 'vertical',
+                metric: '+1.4M Visualizações',
+                desc: 'Edição focada na retenção inicial com hook visual de 2 segundos, legendas coloridas e sound design expressivo.',
+                thumbnail: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=600&q=80',
+                videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4'
+            },
+            {
+                id: '2',
+                title: 'Anúncio de Alta Conversão (UGC Sales)',
+                client: 'Loja de E-commerce',
+                category: 'ads',
+                aspect: 'vertical',
+                metric: '3.8x ROAS em Tráfego Pago',
+                desc: 'Estruturação de VSL rápida, aplicação de provas sociais na tela e call to action clara para aumento do CTR.',
+                thumbnail: 'https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=600&q=80',
+                videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4'
+            },
+            {
+                id: '3',
+                title: 'Teaser Cinematográfico com Motion Graphics',
+                client: 'Podcast de Negócios',
+                category: 'motion',
+                aspect: 'horizontal',
+                metric: '+800k Reach Orgânico',
+                desc: 'Animações sutis em 2D, gráficos de métricas e sincronização ritmada com a trilha sonora.',
+                thumbnail: 'https://images.unsplash.com/photo-1518173946687-a4c8a383392e?auto=format&fit=crop&w=600&q=80',
+                videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4'
+            },
+            {
+                id: '4',
+                title: 'Conteúdo Educacional Rápido para TikTok',
+                client: 'Expert em Finanças',
+                category: 'reels',
+                aspect: 'vertical',
+                metric: '+45k Novos Seguidores',
+                desc: 'Formato ultra-dinâmico reduzindo pausas da fala e inserindo elementos visuais B-roll para retenção contínua.',
+                thumbnail: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=600&q=80',
+                videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4'
+            },
+            {
+                id: '5',
+                title: 'YouTube Shorts - Dicas de Produtividade',
+                client: 'Criador de Conteúdo',
+                category: 'shorts',
+                aspect: 'vertical',
+                metric: '+920k Views',
+                desc: 'Utilização de memes bem posicionados, efeitos sonoros cômicos e transições rápidas de cena.',
+                thumbnail: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80',
+                videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoylikes.mp4'
+            },
+            {
+                id: '6',
+                title: 'Campanha Institucional & Branding',
+                client: 'Agência Digital',
+                category: 'motion',
+                aspect: 'horizontal',
+                metric: '+250k Engajamento',
+                desc: 'Edição elegante com Color Grading personalizado e ritmo focado na construção de autoridade.',
+                thumbnail: 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=600&q=80',
+                videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'
+            },
+            {
+                id: '7',
+                title: 'E-commerce Ad - Lançamento de Produto',
+                client: 'Brand Fashion',
+                category: 'ads',
+                aspect: 'vertical',
+                metric: '4.5x CTR no Instagram',
+                desc: 'Cortes rápidos ao som da batida, destaque de benefícios e chamada direta para a loja.',
+                thumbnail: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=600&q=80',
+                videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4'
+            }
+        ];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const carouselTrack = document.getElementById('carousel-track');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const dotsContainer = document.getElementById('carousel-dots');
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            
+            const modal = document.getElementById('video-modal');
+            const closeModalBtn = document.getElementById('close-modal');
+            const modalVideoContainer = document.getElementById('modal-video-container');
+            const modalTitle = document.getElementById('modal-title');
+            const modalClient = document.getElementById('modal-client');
+            const modalMetric = document.getElementById('modal-metric');
+            const modalDesc = document.getElementById('modal-desc');
+
+            document.getElementById('year').textContent = new Date().getFullYear();
+
+            let currentCategory = 'all';
+            let currentIndex = 0;
+            let currentFilteredData = [...videoData];
+
+            // Calculate visible cards count based on viewport width
+            function getVisibleCardsCount() {
+                if (window.innerWidth >= 1024) return 3; // 3 cards on desktop
+                if (window.innerWidth >= 640) return 2;  // 2 cards on tablet
+                return 1;                                // 1 card on mobile
+            }
+
+            // Render Carousel Items & Dots
+            function renderCarousel() {
+                carouselTrack.innerHTML = '';
+                dotsContainer.innerHTML = '';
+
+                currentFilteredData = currentCategory === 'all' 
+                    ? videoData 
+                    : videoData.filter(item => item.category === currentCategory);
+
+                if (currentFilteredData.length === 0) {
+                    carouselTrack.innerHTML = `
+                        <div class="w-full py-12 text-center text-zinc-500">
+                            Nenhum vídeo encontrado nesta categoria.
+                        </div>
+                    `;
+                    updateNavigation();
+                    return;
+                }
+
+                currentFilteredData.forEach((item, idx) => {
+                    const isVertical = item.aspect === 'vertical';
+                    const card = document.createElement('div');
+                    
+                    // Responsive sizing: 3 cards on lg (calc(33.333% - 16px)), 2 cards on sm (calc(50% - 12px)), 1 card on mobile (100%)
+                    card.className = 'w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] flex-shrink-0 group relative bg-zinc-900 border border-zinc-800 hover:border-purple-500/50 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 shadow-lg cursor-pointer';
+                    
+                    card.innerHTML = `
+                        <!-- Thumbnail Wrapper -->
+                        <div class="relative overflow-hidden ${isVertical ? 'aspect-[9/12]' : 'aspect-video'} bg-zinc-950">
+                            <img src="${item.thumbnail}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+                            
+                            <!-- Play Button Overlay -->
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="w-12 h-12 rounded-full bg-purple-600/90 text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                    <i class="fa-solid fa-play text-sm ml-0.5"></i>
+                                </div>
+                            </div>
+
+                            <!-- Top Metric Badge -->
+                            <div class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-black/60 backdrop-blur-md border border-white/10 text-[11px] font-semibold text-purple-300">
+                                <i class="fa-solid fa-fire text-pink-400 mr-1"></i> ${item.metric}
+                            </div>
+                        </div>
+
+                        <!-- Card Information -->
+                        <div class="p-5">
+                            <span class="text-[11px] font-semibold text-purple-400 tracking-wide uppercase">${item.client}</span>
+                            <h3 class="text-base font-bold text-white group-hover:text-purple-300 transition-colors mt-0.5 line-clamp-1">${item.title}</h3>
+                            <p class="text-xs text-zinc-400 mt-2 line-clamp-2">${item.desc}</p>
+                        </div>
+                    `;
+
+                    card.addEventListener('click', () => openModal(item));
+                    carouselTrack.appendChild(card);
+                });
+
+                // Generate Pagination Dots
+                const totalPages = Math.max(1, currentFilteredData.length - getVisibleCardsCount() + 1);
+                for (let i = 0; i < totalPages; i++) {
+                    const dot = document.createElement('button');
+                    dot.className = `w-2.5 h-2.5 rounded-full transition-all duration-300 ${i === currentIndex ? 'bg-purple-500 w-7' : 'bg-zinc-700 hover:bg-zinc-500'}`;
+                    dot.addEventListener('click', () => {
+                        currentIndex = i;
+                        updateCarouselPosition();
+                    });
+                    dotsContainer.appendChild(dot);
+                }
+
+                updateCarouselPosition();
+            }
+
+            // Update Track Position and Arrow States
+            function updateCarouselPosition() {
+                const visibleCards = getVisibleCardsCount();
+                const maxIndex = Math.max(0, currentFilteredData.length - visibleCards);
+
+                if (currentIndex > maxIndex) currentIndex = maxIndex;
+                if (currentIndex < 0) currentIndex = 0;
+
+                // Move Track based on card width + gap
+                const cardWidthPercentage = 100 / visibleCards;
+                const offset = -(currentIndex * cardWidthPercentage);
+                
+                carouselTrack.style.transform = `translateX(${offset}%)`;
+
+                updateNavigation();
+            }
+
+            function updateNavigation() {
+                const visibleCards = getVisibleCardsCount();
+                const maxIndex = Math.max(0, currentFilteredData.length - visibleCards);
+
+                prevBtn.disabled = currentIndex === 0;
+                nextBtn.disabled = currentIndex >= maxIndex || currentFilteredData.length <= visibleCards;
+
+                // Update dots active state
+                const dots = dotsContainer.querySelectorAll('button');
+                dots.forEach((dot, idx) => {
+                    if (idx === currentIndex) {
+                        dot.className = 'w-7 h-2.5 rounded-full bg-purple-500 transition-all duration-300';
+                    } else {
+                        dot.className = 'w-2.5 h-2.5 rounded-full bg-zinc-700 hover:bg-zinc-500 transition-all duration-300';
+                    }
+                });
+            }
+
+            // Event Controls
+            prevBtn.addEventListener('click', () => {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateCarouselPosition();
+                }
+            });
+
+            nextBtn.addEventListener('click', () => {
+                const visibleCards = getVisibleCardsCount();
+                if (currentIndex < currentFilteredData.length - visibleCards) {
+                    currentIndex++;
+                    updateCarouselPosition();
+                }
+            });
+
+            // Touch Swipe Support for Mobile/Tablet
+            let startX = 0;
+            let isDragging = false;
+
+            carouselTrack.addEventListener('touchstart', (e) => {
+                startX = e.touches[0].clientX;
+                isDragging = true;
+            }, { passive: true });
+
+            carouselTrack.addEventListener('touchend', (e) => {
+                if (!isDragging) return;
+                const endX = e.changedTouches[0].clientX;
+                const diffX = startX - endX;
+
+                if (diffX > 40) {
+                    nextBtn.click();
+                } else if (diffX < -40) {
+                    prevBtn.click();
+                }
+                isDragging = false;
+            }, { passive: true });
+
+            // Category Filter Click
+            filterButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterButtons.forEach(b => {
+                        b.classList.remove('bg-purple-600', 'text-white', 'border-purple-500/50', 'shadow-lg', 'shadow-purple-900/30');
+                        b.classList.add('bg-zinc-900', 'text-zinc-400', 'border-zinc-800');
+                    });
+
+                    btn.classList.remove('bg-zinc-900', 'text-zinc-400', 'border-zinc-800');
+                    btn.classList.add('bg-purple-600', 'text-white', 'border-purple-500/50', 'shadow-lg', 'shadow-purple-900/30');
+
+                    currentCategory = btn.dataset.filter;
+                    currentIndex = 0;
+                    renderCarousel();
+                });
+            });
+
+            // Modal Handlers
+            function openModal(item) {
+                modalTitle.textContent = item.title;
+                modalClient.textContent = item.client;
+                modalMetric.innerHTML = `<i class="fa-solid fa-chart-line mr-1"></i> ${item.metric}`;
+                modalDesc.textContent = item.desc;
+
+                modalVideoContainer.innerHTML = `
+                    <video controls autoplay class="w-full max-h-[70vh] rounded-lg">
+                        <source src="${item.videoUrl}" type="video/mp4">
+                        Seu navegador não suporta a tag de vídeo.
+                    </video>
+                `;
+
+                modal.classList.remove('opacity-0', 'pointer-events-none');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeModal() {
+                modal.classList.add('opacity-0', 'pointer-events-none');
+                modalVideoContainer.innerHTML = '';
+                document.body.style.overflow = 'auto';
+            }
+
+            closeModalBtn.addEventListener('click', closeModal);
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) closeModal();
+            });
+
+            // Handle Window Resize to adapt visible cards
+            window.addEventListener('resize', () => {
+                updateCarouselPosition();
+            });
+
+            // Initial Execution
+            renderCarousel();
+        });
+    </script>
+</body>
+</html>
