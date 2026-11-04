@@ -23,6 +23,12 @@
 
     document.getElementById('year').textContent = String(new Date().getFullYear());
 
+    // Crachá: se public/perfil.jpg ainda não existir, mostra o ícone de reserva
+    const badgePhoto = document.getElementById('badge-photo');
+    const hideBadgePhoto = () => badgePhoto.remove();
+    if (badgePhoto.complete && badgePhoto.naturalWidth === 0) hideBadgePhoto();
+    else badgePhoto.addEventListener('error', hideBadgePhoto);
+
     const SWIPE_THRESHOLD = 40;
 
     // ---------- Data ----------
