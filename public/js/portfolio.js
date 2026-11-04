@@ -36,6 +36,14 @@
 window.PORTFOLIO_ITEMS = Object.freeze([
     {
         type: 'fotos',
+        folder: 'fotos/chaveamento-competicoes',
+        title: 'Chaveamento competiçoẽs',
+        client: 'OL.CENTRAL',
+        desc: 'Libertadores - Suldamerica - Copa do Brasil',
+        aspect: 'vertical',
+    },
+    {
+        type: 'fotos',
         folder: 'fotos/colecao-nova',
         title: 'Coleção nova',
         client: 'axomege',
