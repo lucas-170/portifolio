@@ -1,7 +1,7 @@
 (() => {
     'use strict';
 
-    const photoManifest = window.PHOTO_MANIFEST || {};
+    const mediaManifest = window.MEDIA_MANIFEST || {};
     const items = (window.PORTFOLIO_ITEMS || []).map(normalizeItem).filter(Boolean);
 
     // ---------- Elements ----------
@@ -27,27 +27,39 @@
 
     // ---------- Data ----------
 
-    /** Coleções de fotos (itens com `folder`) recebem a lista gerada no build. */
+    /**
+     * Itens com `folder` (vídeo local ou coleção de fotos) recebem os arquivos
+     * listados no build (media-manifest.js). Vídeos com `videoUrl` passam direto.
+     */
     function normalizeItem(item) {
-        if (!item.folder) return item;
+        const base = {
+            ...item,
+            aspect: item.aspect || 'vertical',
+            client: item.client || '',
+            desc: item.desc || '',
+            metric: item.metric || '',
+        };
 
-        const photos = photoManifest[item.folder];
-        if (!photos || photos.length === 0) {
-            console.warn(`[portfólio] Coleção "${item.title}" ignorada: rode "npm run build" para listar as fotos de "${item.folder}".`);
+        if (!item.folder) return base;
+
+        const media = mediaManifest[item.folder];
+        if (!media) {
+            console.warn(`[portfólio] "${item.title}" ignorado: rode "npm run build" para listar os arquivos de "${item.folder}".`);
             return null;
         }
 
+        if (item.type === 'video') {
+            return { ...base, videoUrl: media.video, thumbnail: media.thumbnail };
+        }
+
         const fileName = (url) => decodeURIComponent(url.split('/').pop());
-        const cover = (item.cover && photos.find((url) => fileName(url) === item.cover)) || photos[0];
+        const cover = (item.cover && media.photos.find((url) => fileName(url) === item.cover)) || media.photos[0];
 
         return {
-            ...item,
-            photos,
+            ...base,
+            photos: media.photos,
             thumbnail: cover,
-            aspect: item.aspect || 'vertical',
-            metric: item.metric || `${photos.length} fotos`,
-            client: item.client || '',
-            desc: item.desc || '',
+            metric: base.metric || `${media.photos.length} fotos`,
         };
     }
 
@@ -80,9 +92,22 @@
         const isVertical = item.aspect === 'vertical';
 
         thumb.classList.add(isVertical ? 'aspect-[9/12]' : 'aspect-video');
-        img.src = item.thumbnail;
-        img.width = 600;
-        img.height = isVertical ? 800 : 338;
+
+        if (item.thumbnail) {
+            img.src = item.thumbnail;
+            img.width = 600;
+            img.height = isVertical ? 800 : 338;
+        } else if (item.videoUrl) {
+            // Vídeo sem capa: mostra o primeiro frame do próprio vídeo
+            const preview = document.createElement('video');
+            preview.className = img.className;
+            preview.muted = true;
+            preview.playsInline = true;
+            preview.preload = 'metadata';
+            preview.src = `${item.videoUrl}#t=0.1`;
+            preview.setAttribute('aria-hidden', 'true');
+            img.replaceWith(preview);
+        }
 
         if (isCollection(item)) {
             const icon = card.querySelector('[data-icon]');
@@ -90,7 +115,10 @@
             icon.classList.add('fa-images');
         }
 
-        card.querySelector('[data-metric]').textContent = item.metric;
+        const metric = card.querySelector('[data-metric]');
+        if (item.metric) metric.textContent = item.metric;
+        else metric.parentElement.remove();
+
         card.querySelector('[data-client]').textContent = item.client;
         card.querySelector('[data-title]').textContent = item.title;
         card.querySelector('[data-desc]').textContent = item.desc;
@@ -311,6 +339,7 @@
         video.playsInline = true;
         video.preload = 'metadata';
         video.src = item.videoUrl;
+        if (item.thumbnail) video.poster = item.thumbnail;
         video.textContent = 'Seu navegador não suporta a tag de vídeo.';
         return video;
     }
@@ -353,6 +382,7 @@
         modalTitle.textContent = item.title;
         modalClient.textContent = item.client;
         modalMetric.textContent = item.metric;
+        modalMetric.parentElement.classList.toggle('hidden', !item.metric);
         modalDesc.textContent = item.desc;
         modalMetricIcon.className = isCollection(item) ? 'fa-solid fa-images' : 'fa-solid fa-chart-line';
 

@@ -9,11 +9,13 @@ public/            ← tudo que vai para o ar
   index.html
   favicon.svg
   css/styles.css   ← GERADO pelo build (não editar, não versionado)
-  fotos/           ← pastas das coleções de fotos (uma pasta por coleção)
-  js/portfolio.js  ← lista de vídeos e coleções do carrossel (edite aqui)
-  js/photo-manifest.js ← GERADO pelo build (lista de fotos de cada pasta)
+  videos/<nome>/   ← um vídeo por pasta (+ capa opcional)
+  fotos/<nome>/    ← uma coleção de fotos por pasta
+  js/portfolio.js  ← lista de vídeos e coleções do carrossel
+  js/media-manifest.js ← GERADO pelo build (arquivos de cada pasta)
   js/main.js       ← lógica do carrossel, do modal e da galeria
-scripts/build-photos.js ← lê as pastas de fotos e gera o photo-manifest.js
+scripts/new-item.js    ← comandos new-video / new-fotos
+scripts/build-media.js ← lê as pastas e gera o media-manifest.js
 src/styles.css     ← entrada do Tailwind + CSS customizado
 tailwind.config.js
 vercel.json
@@ -31,46 +33,38 @@ Depois é só abrir `public/index.html` no navegador.
 ## Build / Deploy
 
 ```bash
-npm run build      # lista as fotos + gera public/css/styles.css minificado
+npm run build      # lista vídeos/fotos + gera public/css/styles.css minificado
 ```
 
 Na Vercel o `vercel.json` já configura o build (`npm run build`) e a pasta publicada (`public`).
 
-## Adicionando um vídeo
+## Adicionando trabalhos
 
-Adicione um objeto em `public/js/portfolio.js`:
-
-```js
-{
-    title: 'Título',
-    client: 'Cliente',
-    aspect: 'vertical', // ou 'horizontal'
-    metric: '+1M Views',
-    desc: 'Descrição curta.',
-    thumbnail: 'https://...',
-    videoUrl: 'https://...mp4',
-},
+```bash
+npm run new-video   # novo vídeo
+npm run new-fotos   # nova coleção de fotos
 ```
 
-## Adicionando uma coleção de fotos
+O comando pergunta título, cliente, descrição, métrica e formato do card,
+adiciona o item no início de `public/js/portfolio.js`, cria a pasta e mostra
+o caminho para onde mover os arquivos:
 
-1. Coloque as fotos numa pasta dentro de `public/`, por exemplo `public/fotos/ensaio-cafe/`.
-   Formatos aceitos: `.jpg .jpeg .png .webp .avif .gif`. A ordem segue o nome
-   do arquivo (ordem natural: `foto-2` vem antes de `foto-10`).
-2. Adicione em `public/js/portfolio.js`, só informando a pasta:
+- **Vídeo** → `public/videos/<nome>/`: mova **um** vídeo (`.mp4` recomendado;
+  também `.webm .m4v .mov`) e, se quiser, uma imagem de capa. Sem capa, o card
+  mostra o primeiro frame do vídeo.
+- **Fotos** → `public/fotos/<nome>/`: mova todas as fotos (`.jpg .jpeg .png
+  .webp .avif .gif`). A ordem segue o nome do arquivo (`foto-2` antes de
+  `foto-10`) e a primeira vira a capa.
 
-```js
-{
-    folder: 'fotos/ensaio-cafe',
-    title: 'Ensaio Cafeteria',
-    client: 'Café Aroma',       // opcional
-    desc: 'Fotos para o feed.', // opcional
-    cover: 'capa.jpg',          // opcional (padrão: primeira foto)
-},
-```
+Depois rode `npm run build` (ou só `npm run midia`). Se faltar arquivo
+em alguma pasta, o build para e mostra o caminho.
 
-3. Rode `npm run build` (ou só `npm run fotos`) para atualizar a lista de fotos.
-   Se a pasta não existir ou estiver vazia, o build para e mostra o erro.
+Para editar ou remover um trabalho, altere `public/js/portfolio.js` (e apague
+a pasta correspondente). Os campos opcionais estão documentados no topo dele.
 
-> Dica: exporte as fotos já otimizadas para web (ex.: lado maior com ~2000px,
-> JPG/WebP com qualidade ~80). Fotos direto da câmera (10+ MB) deixam o site lento.
+### Dicas de tamanho
+
+- **Vídeos:** comprima para menos de ~50 MB (o build avisa). O GitHub recusa
+  arquivos acima de 100 MB. Para vídeos longos, prefira hospedar fora e usar
+  `videoUrl` (veja o topo do `portfolio.js`).
+- **Fotos:** exporte para web (lado maior ~2000px, JPG/WebP qualidade ~80).

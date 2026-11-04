@@ -1,29 +1,37 @@
 /**
  * Itens exibidos no carrossel do portfólio (na ordem desta lista).
- * Para adicionar/remover um trabalho, edite apenas esta lista.
  *
- * ── VÍDEO ─────────────────────────────────────────────────────────────
+ * ★ Jeito fácil: rode `npm run new-video` ou `npm run new-fotos`.
+ *   O comando pergunta os campos, adiciona o item aqui e cria a pasta
+ *   para você só mover os arquivos. Depois rode `npm run build`.
+ *
+ * ── VÍDEO LOCAL (arquivo dentro de public/) ───────────────────────────
+ *   {
+ *       type: 'video',
+ *       folder: 'videos/meu-video',   // 1 vídeo (.mp4 .webm .m4v .mov)
+ *                                     // + capa opcional (.jpg .png .webp...)
+ *       title: 'Título',              // obrigatório
+ *       client, desc, metric,         // opcionais
+ *       aspect: 'vertical',           // 'vertical' | 'horizontal'
+ *   },
+ *
+ * ── VÍDEO EXTERNO (URL) ───────────────────────────────────────────────
  *   { title, client, desc, metric, aspect, thumbnail, videoUrl }
  *
  * ── COLEÇÃO DE FOTOS ──────────────────────────────────────────────────
- *   Basta informar a pasta (dentro de public/). Todas as fotos dela
- *   (.jpg .jpeg .png .webp .avif .gif) entram automaticamente, em ordem
- *   alfabética/numérica (foto-2 antes de foto-10).
- *
  *   {
- *       folder: 'fotos/ensaio-cafe',   // obrigatório → public/fotos/ensaio-cafe/
- *       title: 'Ensaio Cafeteria',     // obrigatório
- *       client: 'Café Aroma',          // opcional
- *       desc: 'Fotos para o feed.',    // opcional
- *       metric: '+30% engajamento',    // opcional (padrão: "N fotos")
- *       cover: 'capa.jpg',             // opcional (padrão: primeira foto)
- *       aspect: 'vertical',            // opcional (padrão: 'vertical')
+ *       type: 'fotos',
+ *       folder: 'fotos/ensaio-cafe',  // todas as fotos da pasta, em ordem
+ *                                     // natural (foto-2 antes de foto-10)
+ *       title: 'Ensaio Cafeteria',    // obrigatório
+ *       client, desc,                 // opcionais
+ *       metric: '+30% engajamento',   // opcional (padrão: "N fotos")
+ *       cover: 'capa.jpg',            // opcional (padrão: primeira foto)
+ *       aspect: 'vertical',
  *   },
  *
- *   Depois de criar/alterar pastas de fotos, rode `npm run build`
- *   (ou `npm run fotos`) para atualizar a lista.
- *
- * aspect: 'vertical' (card em pé) | 'horizontal' (card 16:9)
+ * Itens com `folder` precisam de `npm run build` (ou `npm run midia`)
+ * depois de adicionar/trocar arquivos.
  *
  * TODO: substituir as thumbnails (Unsplash) e os vídeos de exemplo
  * pelos trabalhos reais.

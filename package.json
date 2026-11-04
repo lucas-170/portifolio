@@ -4,9 +4,11 @@
   "private": true,
   "description": "Portfólio de Social Media & Video Creator",
   "scripts": {
-    "fotos": "node scripts/build-photos.js",
-    "build": "npm run fotos && tailwindcss -i ./src/styles.css -o ./public/css/styles.css --minify",
-    "dev": "npm run fotos && tailwindcss -i ./src/styles.css -o ./public/css/styles.css --watch"
+    "new-video": "node scripts/new-item.js video",
+    "new-fotos": "node scripts/new-item.js fotos",
+    "midia": "node scripts/build-media.js",
+    "build": "npm run midia && tailwindcss -i ./src/styles.css -o ./public/css/styles.css --minify",
+    "dev": "npm run midia && tailwindcss -i ./src/styles.css -o ./public/css/styles.css --watch"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.19"
