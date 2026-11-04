@@ -1,0 +1,5 @@
+node_modules/
+public/css/styles.css
+.vercel
+.DS_Store
+public/js/photo-manifest.js

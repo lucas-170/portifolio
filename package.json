@@ -1,0 +1,14 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portfólio de Social Media & Video Creator",
+  "scripts": {
+    "fotos": "node scripts/build-photos.js",
+    "build": "npm run fotos && tailwindcss -i ./src/styles.css -o ./public/css/styles.css --minify",
+    "dev": "npm run fotos && tailwindcss -i ./src/styles.css -o ./public/css/styles.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.19"
+  }
+}
