@@ -420,6 +420,16 @@
     });
 
     // ---------- Init ----------
+    if (items.length === 0) {
+        // Nenhum trabalho cadastrado ainda: mostra aviso e esconde os controles
+        const empty = document.createElement('p');
+        empty.className = 'w-full py-12 text-center text-zinc-500';
+        empty.textContent = 'Novos trabalhos em breve.';
+        track.replaceChildren(empty);
+        [prevBtn, nextBtn, dotsContainer].forEach((el) => el.classList.add('hidden'));
+        return;
+    }
+
     renderCards();
     renderDots();
     updateCarousel();
