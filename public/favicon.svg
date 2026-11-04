@@ -1,5 +1,56 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="8" fill="#fafafa"/>
-  <rect x="1.5" y="1.5" width="29" height="29" rx="7" fill="#09090b"/>
-  <path d="M12 9.5v13l11-6.5z" fill="#ef4444"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="100%" height="100%">
+  <!-- Fundo escuro arredondado (estilo App Icon) -->
+  <rect width="256" height="256" rx="56" fill="#1a1a1a" />
+
+  <!-- Anel exterior laranja -->
+  <circle cx="128" cy="128" r="96" fill="none" stroke="#f97316" stroke-width="4" />
+  
+  <!-- Detalhes do anel para quebrar a linha -->
+  <!-- Esconder o anel debaixo dos ícones -->
+  <circle cx="68" cy="58" r="16" fill="#1a1a1a" />
+  <circle cx="188" cy="58" r="16" fill="#1a1a1a" />
+  <circle cx="205" cy="195" r="22" fill="#1a1a1a" />
+
+  <!-- Ícone de Futebol (Canto Superior Esquerdo) -->
+  <g transform="translate(68, 58)">
+    <circle cx="0" cy="0" r="12" fill="#1a1a1a" stroke="#f97316" stroke-width="2" />
+    <polygon points="0,-5 5,-1 3,5 -3,5 -5,-1" fill="none" stroke="#f97316" stroke-width="1.5" />
+    <line x1="0" y1="-5" x2="0" y2="-12" stroke="#f97316" stroke-width="1.5" />
+    <line x1="5" y1="-1" x2="11" y2="-4" stroke="#f97316" stroke-width="1.5" />
+    <line x1="3" y1="5" x2="7" y2="10" stroke="#f97316" stroke-width="1.5" />
+    <line x1="-3" y1="5" x2="-7" y2="10" stroke="#f97316" stroke-width="1.5" />
+    <line x1="-5" y1="-1" x2="-11" y2="-4" stroke="#f97316" stroke-width="1.5" />
+  </g>
+
+  <!-- Ícone de Câmara / Obturador (Canto Superior Direito) -->
+  <g transform="translate(188, 58)">
+    <circle cx="0" cy="0" r="12" fill="#1a1a1a" stroke="#f97316" stroke-width="2" />
+    <circle cx="0" cy="0" r="4" fill="none" stroke="#f97316" stroke-width="1.5" />
+    <line x1="4" y1="0" x2="11" y2="4" stroke="#f97316" stroke-width="1.5" />
+    <line x1="-4" y1="0" x2="-11" y2="-4" stroke="#f97316" stroke-width="1.5" />
+    <line x1="0" y1="4" x2="-4" y2="11" stroke="#f97316" stroke-width="1.5" />
+    <line x1="0" y1="-4" x2="4" y2="-11" stroke="#f97316" stroke-width="1.5" />
+  </g>
+
+  <!-- Ícone Seta do Cursor (Canto Inferior Direito) -->
+  <g transform="translate(200, 185) rotate(-20)">
+    <polygon points="0,0 12,30 9,21 17,30 22,25 14,17 23,13" fill="#f97316" />
+  </g>
+
+  <!-- Estrelas e Pontos de detalhe -->
+  <polygon points="128,32 130,37 136,37 131,40 133,45 128,42 123,45 125,40 120,37 126,37" fill="#ffffff" opacity="0.8" />
+  <circle cx="36" cy="128" r="2.5" fill="#f97316" />
+  <circle cx="220" cy="128" r="2.5" fill="#f97316" />
+  <circle cx="128" cy="220" r="2.5" fill="#f97316" />
+
+  <!-- Letras LM em itálico e entrelaçadas -->
+  <g transform="translate(32, 0) skewX(-12)">
+    
+    <!-- Letra L (Branca) -->
+    <path d="M 60 75 L 60 185 L 125 185 L 125 160 L 85 160 L 85 75 Z" fill="#ffffff" />
+    
+    <!-- Letra M (Laranja) - Sobrepõe-se parcialmente ao L -->
+    <path d="M 98 185 L 98 75 L 138 135 L 178 75 L 178 185 L 153 185 L 153 115 L 138 140 L 123 115 L 123 185 Z" fill="#f97316" />
+    
+  </g>
 </svg>
