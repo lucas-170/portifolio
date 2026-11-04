@@ -29,6 +29,44 @@
     if (badgePhoto.complete && badgePhoto.naturalWidth === 0) hideBadgePhoto();
     else badgePhoto.addEventListener('error', hideBadgePhoto);
 
+    // ---------- Navegação interna (sempre abrir no topo) ----------
+    // Ao recarregar, não restaura a posição anterior do scroll.
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+
+    // Se abrirem o site com "#secao" no endereço, limpa e começa do topo.
+    if (location.hash) {
+        history.replaceState(null, '', location.pathname + location.search);
+        window.scrollTo({ top: 0, behavior: 'instant' });
+        window.addEventListener('load', () => window.scrollTo({ top: 0, behavior: 'instant' }), { once: true });
+    }
+
+    // Links do menu (#portfolio, #contato...) rolam até a seção sem colocar "#" no endereço.
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    document.addEventListener('click', (e) => {
+        const link = e.target.closest('a[href^="#"]');
+        if (!link || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+
+        const id = link.getAttribute('href').slice(1);
+        const target = id && id !== 'top' ? document.getElementById(id) : null;
+        if (id && id !== 'top' && !target) return;
+
+        e.preventDefault();
+        const behavior = reducedMotion.matches ? 'auto' : 'smooth';
+
+        if (!target) {
+            window.scrollTo({ top: 0, behavior });
+            return;
+        }
+
+        target.scrollIntoView({ behavior, block: 'start' });
+        // Move o foco junto (teclado / leitor de tela continuam a partir da seção)
+        if (!target.hasAttribute('tabindex')) {
+            target.setAttribute('tabindex', '-1');
+            target.classList.add('focus:outline-none');
+        }
+        target.focus({ preventScroll: true });
+    });
+
     const SWIPE_THRESHOLD = 40;
 
     // ---------- Data ----------
