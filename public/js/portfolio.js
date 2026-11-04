@@ -35,6 +35,14 @@
  */
 window.PORTFOLIO_ITEMS = Object.freeze([
     {
+        type: 'fotos',
+        folder: 'fotos/colecao-nova',
+        title: 'Coleção nova',
+        client: 'axomege',
+        desc: 'Lançamento de Coleção — Moda',
+        aspect: 'vertical',
+    },
+    {
         type: 'video',
         folder: 'videos/triunfo-do-bahia',
         title: 'Triunfo do Bahia',
