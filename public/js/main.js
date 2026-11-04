@@ -145,7 +145,7 @@
     let visibleCount = getVisibleCardsCount();
     let cards = [];
 
-    const DOT_ACTIVE = 'w-7 h-2.5 rounded-full bg-white transition-all duration-300';
+    const DOT_ACTIVE = 'w-7 h-2.5 rounded-full bg-primary-500 transition-all duration-300';
     const DOT_INACTIVE = 'w-2.5 h-2.5 rounded-full bg-zinc-700 hover:bg-zinc-500 transition-all duration-300';
 
     // Mesmos breakpoints do Tailwind (sm = 640px, lg = 1024px)
@@ -299,8 +299,8 @@
     }
 
     // ---------- Photo gallery (dentro do modal) ----------
-    const GALLERY_ARROW = 'absolute top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-zinc-900/80 border border-zinc-700/80 text-white flex items-center justify-center hover:bg-white hover:text-black hover:border-white backdrop-blur-md transition-all duration-300';
-    const THUMB_ACTIVE = 'ring-2 ring-white opacity-100';
+    const GALLERY_ARROW = 'absolute top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-zinc-900/80 border border-zinc-700/80 text-white flex items-center justify-center hover:bg-primary-600 hover:text-white hover:border-primary-500 backdrop-blur-md transition-all duration-300';
+    const THUMB_ACTIVE = 'ring-2 ring-primary-500 opacity-100';
     const THUMB_INACTIVE = 'opacity-50 hover:opacity-100';
 
     let gallery = null; // { item, index, img, counter, thumbs }

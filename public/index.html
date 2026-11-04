@@ -33,9 +33,9 @@
     <script src="js/media-manifest.js" defer></script>
     <script src="js/main.js" defer></script>
 </head>
-<body class="bg-dark-bg text-zinc-100 min-h-screen flex flex-col antialiased selection:bg-white selection:text-black">
+<body class="bg-dark-bg text-zinc-100 min-h-screen flex flex-col antialiased selection:bg-primary-600 selection:text-white">
 
-    <a href="#conteudo" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-white focus:text-black">
+    <a href="#conteudo" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-primary-600 focus:text-white">
         Pular para o conteúdo
     </a>
 
@@ -47,10 +47,10 @@
                 <a href="#top" class="flex items-center gap-2 group" aria-label="Lucas Miranda — voltar ao início">
                     <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-white via-zinc-500 to-white p-[1px] transition-transform duration-300 group-hover:scale-105">
                         <div class="w-full h-full bg-dark-bg rounded-[7px] flex items-center justify-center">
-                            <i aria-hidden="true" class="fa-solid font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-zinc-400 fa-play text-xs"></i>
+                            <i aria-hidden="true" class="fa-solid font-bold text-primary-500 fa-play text-xs"></i>
                         </div>
                     </div>
-                    <span class="font-bold text-lg tracking-tight text-white group-hover:text-zinc-300 transition-colors">LUCAS <span class="text-zinc-400">MIRANDA</span></span>
+                    <span class="font-bold text-lg tracking-tight text-white group-hover:text-primary-400 transition-colors">LUCAS <span class="text-zinc-400">MIRANDA</span></span>
                 </a>
 
                 <!-- Nav Links -->
@@ -62,7 +62,7 @@
 
                 <!-- CTA Button Header -->
                 <div class="flex items-center gap-2">
-                    <a href="#contato" class="relative hidden sm:inline-flex items-center justify-center px-4 py-2 text-xs font-semibold text-white bg-zinc-900 border border-zinc-700 hover:border-white rounded-lg transition-all duration-300 hover:shadow-[0_0_15px_rgba(255,255,255,0.15)]">
+                    <a href="#contato" class="relative hidden sm:inline-flex items-center justify-center px-4 py-2 text-xs font-semibold text-white bg-zinc-900 border border-zinc-700 hover:border-primary-500 rounded-lg transition-all duration-300 hover:shadow-[0_0_15px_rgba(239,68,68,0.3)]">
                         <span>Iniciar Projeto</span>
                         <i aria-hidden="true" class="fa-solid fa-arrow-right ml-2 text-xs"></i>
                     </a>
@@ -81,7 +81,7 @@
                 <a href="#portfolio" class="py-3 text-zinc-300 hover:text-white transition-colors">Portfólio</a>
                 <a href="#servicos" class="py-3 text-zinc-300 hover:text-white transition-colors">Serviços</a>
                 <a href="#contato" class="py-3 text-zinc-300 hover:text-white transition-colors">Contato</a>
-                <a href="#contato" class="mt-2 mb-1 inline-flex items-center justify-center px-4 py-3 text-sm font-semibold text-black bg-white hover:bg-zinc-200 rounded-lg transition-colors">
+                <a href="#contato" class="mt-2 mb-1 inline-flex items-center justify-center px-4 py-3 text-sm font-semibold text-white bg-primary-600 hover:bg-primary-500 rounded-lg transition-colors">
                     Iniciar Projeto <i aria-hidden="true" class="fa-solid fa-arrow-right ml-2 text-xs"></i>
                 </a>
             </div>
@@ -91,8 +91,8 @@
     <!-- Page shell: fundo quadriculado + coluna central compartilhada por todas as seções -->
     <div class="relative py-12 sm:py-20 lg:py-28 overflow-hidden bg-grid-pattern border-b border-dark-border">
         <!-- Radial Blur Effects -->
-        <div aria-hidden="true" class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-white/[0.06] blur-[120px] rounded-full pointer-events-none"></div>
-        <div aria-hidden="true" class="absolute top-1/3 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[200px] bg-zinc-400/5 blur-[100px] rounded-full pointer-events-none"></div>
+        <div aria-hidden="true" class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-primary-600/10 blur-[120px] rounded-full pointer-events-none"></div>
+        <div aria-hidden="true" class="absolute top-1/3 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[200px] bg-secondary-500/10 blur-[100px] rounded-full pointer-events-none"></div>
 
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
 
@@ -100,14 +100,14 @@
             <section id="inicio" aria-labelledby="hero-title">
                 <!-- Badge Status -->
                 <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-white/20 bg-white/5 text-zinc-200 text-xs font-medium mb-6 sm:mb-8 backdrop-blur-md">
-                    <span aria-hidden="true" class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
+                    <span aria-hidden="true" class="w-2 h-2 rounded-full bg-primary-500 animate-pulse"></span>
                     Disponível para novos projetos e marcas
                 </div>
 
                 <!-- Main Title -->
                 <h1 id="hero-title" class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-6 leading-[1.1]">
                     Transformando Vídeos em <br class="hidden sm:inline">
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-200 to-zinc-500">Retenção & Vendas</span>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 to-secondary-500">Retenção & Vendas</span>
                 </h1>
 
                 <!-- Subtitle/Bio -->
@@ -120,7 +120,7 @@
                 <!-- Video Hub Section with Carousel -->
                 <section id="portfolio" aria-labelledby="portfolio-title" class="py-12 sm:py-20 max-w-6xl mx-auto sm:px-6 lg:px-8">
                     <div class="text-center mb-10">
-                        <span class="text-xs font-bold text-zinc-400 uppercase tracking-widest">Showcase de Projetos</span>
+                        <span class="text-xs font-bold text-secondary-400 uppercase tracking-widest">Showcase de Projetos</span>
                         <h2 id="portfolio-title" class="text-3xl sm:text-4xl font-bold text-white tracking-tight mt-1 mb-3">Galeria de Trabalhos Em Destaque</h2>
                         <p class="text-zinc-400 max-w-xl mx-auto text-sm sm:text-base">
                             Navegue pelo carrossel para conferir amostras das edições estratégicas focadas em reter a audiência.
@@ -130,12 +130,12 @@
                     <!-- Carousel Container -->
                     <div class="relative group/carousel px-1" aria-roledescription="carrossel" aria-label="Vídeos do portfólio">
                         <!-- Navigation Arrow Left -->
-                        <button id="prev-btn" type="button" aria-label="Vídeos anteriores" aria-controls="carousel-track" class="absolute -left-5 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-zinc-900/90 border border-zinc-700/80 text-white hidden sm:flex items-center justify-center hover:bg-white hover:text-black hover:border-white hover:scale-110 backdrop-blur-md shadow-xl transition-all duration-300 disabled:opacity-30 disabled:hover:scale-100 disabled:hover:bg-zinc-900">
+                        <button id="prev-btn" type="button" aria-label="Vídeos anteriores" aria-controls="carousel-track" class="absolute -left-5 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-zinc-900/90 border border-zinc-700/80 text-white hidden sm:flex items-center justify-center hover:bg-primary-600 hover:text-white hover:border-primary-500 hover:scale-110 backdrop-blur-md shadow-xl transition-all duration-300 disabled:opacity-30 disabled:hover:scale-100 disabled:hover:bg-zinc-900">
                             <i aria-hidden="true" class="fa-solid fa-chevron-left text-sm"></i>
                         </button>
 
                         <!-- Navigation Arrow Right -->
-                        <button id="next-btn" type="button" aria-label="Próximos vídeos" aria-controls="carousel-track" class="absolute -right-5 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-zinc-900/90 border border-zinc-700/80 text-white hidden sm:flex items-center justify-center hover:bg-white hover:text-black hover:border-white hover:scale-110 backdrop-blur-md shadow-xl transition-all duration-300 disabled:opacity-30 disabled:hover:scale-100 disabled:hover:bg-zinc-900">
+                        <button id="next-btn" type="button" aria-label="Próximos vídeos" aria-controls="carousel-track" class="absolute -right-5 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-zinc-900/90 border border-zinc-700/80 text-white hidden sm:flex items-center justify-center hover:bg-primary-600 hover:text-white hover:border-primary-500 hover:scale-110 backdrop-blur-md shadow-xl transition-all duration-300 disabled:opacity-30 disabled:hover:scale-100 disabled:hover:bg-zinc-900">
                             <i aria-hidden="true" class="fa-solid fa-chevron-right text-sm"></i>
                         </button>
 
@@ -153,7 +153,7 @@
                 <!-- Services Section -->
                 <section id="servicos" aria-labelledby="servicos-title" class="py-12 sm:py-20 max-w-6xl mx-auto sm:px-6 lg:px-8">
                     <div class="text-center mb-8 sm:mb-16">
-                        <span class="text-xs font-bold text-zinc-400 uppercase tracking-widest">Especialidades</span>
+                        <span class="text-xs font-bold text-secondary-400 uppercase tracking-widest">Especialidades</span>
                         <h2 id="servicos-title" class="text-3xl sm:text-4xl font-bold text-white mt-1">Como Posso Elevar seu Conteúdo</h2>
                         <p class="text-zinc-400 max-w-xl mx-auto text-sm sm:text-base mt-3">
                             Combinação estratégica de técnicas visuais modernas para manter a audiência presa até o último segundo.
@@ -161,8 +161,8 @@
                     </div>
 
                     <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8 text-left">
-                        <li class="p-5 sm:p-8 flex gap-4 sm:block rounded-2xl bg-zinc-900/40 border border-zinc-800/80 hover:border-white/40 transition-all duration-300 group">
-                            <div class="shrink-0 w-12 h-12 rounded-xl bg-white/5 border border-white/15 flex items-center justify-center text-white sm:mb-6 group-hover:scale-110 transition-transform">
+                        <li class="p-5 sm:p-8 flex gap-4 sm:block rounded-2xl bg-zinc-900/40 border border-zinc-800/80 hover:border-secondary-500/50 transition-all duration-300 group">
+                            <div class="shrink-0 w-12 h-12 rounded-xl bg-secondary-500/10 border border-secondary-500/20 flex items-center justify-center text-secondary-400 sm:mb-6 group-hover:scale-110 transition-transform">
                                 <i aria-hidden="true" class="fa-solid fa-mobile-screen-button text-xl"></i>
                             </div>
                             <div>                            <h3 class="text-lg sm:text-xl font-bold text-white mb-1.5 sm:mb-3">Edição Vertical Dinâmica</h3>
@@ -172,8 +172,8 @@
                             </div>
                         </li>
 
-                        <li class="p-5 sm:p-8 flex gap-4 sm:block rounded-2xl bg-zinc-900/40 border border-zinc-800/80 hover:border-white/40 transition-all duration-300 group">
-                            <div class="shrink-0 w-12 h-12 rounded-xl bg-white/5 border border-white/15 flex items-center justify-center text-white sm:mb-6 group-hover:scale-110 transition-transform">
+                        <li class="p-5 sm:p-8 flex gap-4 sm:block rounded-2xl bg-zinc-900/40 border border-zinc-800/80 hover:border-secondary-500/50 transition-all duration-300 group">
+                            <div class="shrink-0 w-12 h-12 rounded-xl bg-secondary-500/10 border border-secondary-500/20 flex items-center justify-center text-secondary-400 sm:mb-6 group-hover:scale-110 transition-transform">
                                 <i aria-hidden="true" class="fa-solid fa-bullseye text-xl"></i>
                             </div>
                             <div>                            <h3 class="text-lg sm:text-xl font-bold text-white mb-1.5 sm:mb-3">Vídeos para Anúncios (UGC/Ads)</h3>
@@ -183,8 +183,8 @@
                             </div>
                         </li>
 
-                        <li class="p-5 sm:p-8 flex gap-4 sm:block rounded-2xl bg-zinc-900/40 border border-zinc-800/80 hover:border-white/40 transition-all duration-300 group">
-                            <div class="shrink-0 w-12 h-12 rounded-xl bg-white/5 border border-white/15 flex items-center justify-center text-white sm:mb-6 group-hover:scale-110 transition-transform">
+                        <li class="p-5 sm:p-8 flex gap-4 sm:block rounded-2xl bg-zinc-900/40 border border-zinc-800/80 hover:border-secondary-500/50 transition-all duration-300 group">
+                            <div class="shrink-0 w-12 h-12 rounded-xl bg-secondary-500/10 border border-secondary-500/20 flex items-center justify-center text-secondary-400 sm:mb-6 group-hover:scale-110 transition-transform">
                                 <i aria-hidden="true" class="fa-solid fa-wand-magic-sparkles text-xl"></i>
                             </div>
                             <div>                            <h3 class="text-lg sm:text-xl font-bold text-white mb-1.5 sm:mb-3">Motion Graphics Leve</h3>
@@ -194,8 +194,8 @@
                             </div>
                         </li>
 
-                        <li class="p-5 sm:p-8 flex gap-4 sm:block rounded-2xl bg-zinc-900/40 border border-zinc-800/80 hover:border-white/40 transition-all duration-300 group">
-                            <div class="shrink-0 w-12 h-12 rounded-xl bg-white/5 border border-white/15 flex items-center justify-center text-white sm:mb-6 group-hover:scale-110 transition-transform">
+                        <li class="p-5 sm:p-8 flex gap-4 sm:block rounded-2xl bg-zinc-900/40 border border-zinc-800/80 hover:border-secondary-500/50 transition-all duration-300 group">
+                            <div class="shrink-0 w-12 h-12 rounded-xl bg-secondary-500/10 border border-secondary-500/20 flex items-center justify-center text-secondary-400 sm:mb-6 group-hover:scale-110 transition-transform">
                                 <i aria-hidden="true" class="fa-solid fa-lightbulb text-xl"></i>
                             </div>
                             <div>                            <h3 class="text-lg sm:text-xl font-bold text-white mb-1.5 sm:mb-3">Roteirização & Hooks</h3>
@@ -205,8 +205,8 @@
                             </div>
                         </li>
 
-                        <li class="p-5 sm:p-8 flex gap-4 sm:block rounded-2xl bg-zinc-900/40 border border-zinc-800/80 hover:border-white/40 transition-all duration-300 group">
-                            <div class="shrink-0 w-12 h-12 rounded-xl bg-white/5 border border-white/15 flex items-center justify-center text-white sm:mb-6 group-hover:scale-110 transition-transform">
+                        <li class="p-5 sm:p-8 flex gap-4 sm:block rounded-2xl bg-zinc-900/40 border border-zinc-800/80 hover:border-secondary-500/50 transition-all duration-300 group">
+                            <div class="shrink-0 w-12 h-12 rounded-xl bg-secondary-500/10 border border-secondary-500/20 flex items-center justify-center text-secondary-400 sm:mb-6 group-hover:scale-110 transition-transform">
                                 <i aria-hidden="true" class="fa-solid fa-sliders text-xl"></i>
                             </div>
                             <div>                            <h3 class="text-lg sm:text-xl font-bold text-white mb-1.5 sm:mb-3">Tratamento de Áudio & Cor</h3>
@@ -216,8 +216,8 @@
                             </div>
                         </li>
 
-                        <li class="p-5 sm:p-8 flex gap-4 sm:block rounded-2xl bg-zinc-900/40 border border-zinc-800/80 hover:border-white/40 transition-all duration-300 group">
-                            <div class="shrink-0 w-12 h-12 rounded-xl bg-white/5 border border-white/15 flex items-center justify-center text-white sm:mb-6 group-hover:scale-110 transition-transform">
+                        <li class="p-5 sm:p-8 flex gap-4 sm:block rounded-2xl bg-zinc-900/40 border border-zinc-800/80 hover:border-secondary-500/50 transition-all duration-300 group">
+                            <div class="shrink-0 w-12 h-12 rounded-xl bg-secondary-500/10 border border-secondary-500/20 flex items-center justify-center text-secondary-400 sm:mb-6 group-hover:scale-110 transition-transform">
                                 <i aria-hidden="true" class="fa-solid fa-calendar-check text-xl"></i>
                             </div>
                             <div>                            <h3 class="text-lg sm:text-xl font-bold text-white mb-1.5 sm:mb-3">Pacotes Mensais de Gestão</h3>
@@ -256,7 +256,7 @@
                                     <div class="text-lg font-bold text-white leading-tight">Lucas Miranda</div>
                                     <div class="text-xs font-medium text-zinc-400 mt-1">Editor de Vídeo & Social Media</div>
                                     <div class="inline-flex items-center gap-1.5 mt-3 text-[11px] text-zinc-300">
-                                        <span aria-hidden="true" class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
+                                        <span aria-hidden="true" class="w-1.5 h-1.5 rounded-full bg-primary-500 animate-pulse"></span>
                                         Disponível para projetos
                                     </div>
                                 </figcaption>
@@ -268,7 +268,7 @@
 
                         <div class="flex flex-col gap-8">
                         <div>
-                            <h2 class="text-2xl sm:text-4xl font-extrabold text-white mb-4">Vamos criar conteúdo <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-zinc-400">viral para sua marca?</span></h2>
+                            <h2 class="text-2xl sm:text-4xl font-extrabold text-white mb-4">Vamos criar conteúdo <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 to-secondary-500">viral para sua marca?</span></h2>
                             <p class="text-zinc-400 text-sm leading-relaxed max-w-md mx-auto">
                                 Entre em contato diretamente pelas redes abaixo para orçamentos, parcerias ou análises rápidas do seu perfil.
                             </p>
@@ -276,30 +276,30 @@
 
                         <!-- Fast Contact Buttons — TODO: trocar pelos dados reais -->
                         <div class="flex flex-col gap-4 w-full max-w-md mx-auto">
-                            <a href="https://wa.me/5511944913235" target="_blank" rel="noopener noreferrer" class="p-4 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-white/40 transition-all flex items-center justify-between group">
+                            <a href="https://wa.me/5511944913235" target="_blank" rel="noopener noreferrer" class="p-4 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-secondary-500/50 transition-all flex items-center justify-between group">
                                 <div class="flex items-center gap-4">
-                                    <div class="w-10 h-10 rounded-lg bg-white/5 text-white flex items-center justify-center">
+                                    <div class="w-10 h-10 rounded-lg bg-secondary-500/10 text-secondary-400 flex items-center justify-center">
                                         <i aria-hidden="true" class="fa-brands fa-whatsapp text-lg"></i>
                                     </div>
                                     <div>
                                         <div class="text-xs text-zinc-400">Conversar via WhatsApp</div>
-                                        <div class="text-sm font-semibold text-white group-hover:text-zinc-300 transition-colors">(11) 94491-3235</div>
+                                        <div class="text-sm font-semibold text-white group-hover:text-secondary-400 transition-colors">(11) 94491-3235</div>
                                     </div>
                                 </div>
-                                <i aria-hidden="true" class="fa-solid fa-chevron-right text-zinc-600 group-hover:text-zinc-300 group-hover:translate-x-1 transition-all"></i>
+                                <i aria-hidden="true" class="fa-solid fa-chevron-right text-zinc-600 group-hover:text-secondary-400 group-hover:translate-x-1 transition-all"></i>
                             </a>
 
-                            <a href="mailto:lucasmirandasilva06@gmail.com" class="p-4 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-white/40 transition-all flex items-center justify-between group">
+                            <a href="mailto:lucasmirandasilva06@gmail.com" class="p-4 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-secondary-500/50 transition-all flex items-center justify-between group">
                                 <div class="flex items-center gap-4 min-w-0">
-                                    <div class="shrink-0 w-10 h-10 rounded-lg bg-white/5 text-white flex items-center justify-center">
+                                    <div class="shrink-0 w-10 h-10 rounded-lg bg-secondary-500/10 text-secondary-400 flex items-center justify-center">
                                         <i aria-hidden="true" class="fa-regular fa-envelope text-lg"></i>
                                     </div>
                                     <div class="min-w-0">
                                         <div class="text-xs text-zinc-400">Enviar E-mail Comercial</div>
-                                        <div class="text-sm font-semibold text-white group-hover:text-zinc-300 transition-colors truncate">lucasmirandasilva06@gmail.com</div>
+                                        <div class="text-sm font-semibold text-white group-hover:text-secondary-400 transition-colors truncate">lucasmirandasilva06@gmail.com</div>
                                     </div>
                                 </div>
-                                <i aria-hidden="true" class="fa-solid fa-chevron-right text-zinc-600 group-hover:text-zinc-300 group-hover:translate-x-1 transition-all"></i>
+                                <i aria-hidden="true" class="fa-solid fa-chevron-right text-zinc-600 group-hover:text-secondary-400 group-hover:translate-x-1 transition-all"></i>
                             </a>
                         </div>
                         </div>
@@ -352,7 +352,7 @@
 
     <!-- Template do card (vídeo ou coleção de fotos), clonado pelo js/main.js -->
     <template id="video-card-template">
-        <article role="listitem" class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] flex-shrink-0 group relative bg-zinc-900 border border-zinc-800 hover:border-white/40 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 shadow-lg cursor-pointer">
+        <article role="listitem" class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] flex-shrink-0 group relative bg-zinc-900 border border-zinc-800 hover:border-primary-500/50 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 shadow-lg cursor-pointer">
             <!-- Thumbnail Wrapper (classe de proporção aplicada via JS) -->
             <div data-thumb class="relative overflow-hidden bg-zinc-950">
                 <img data-img src="" alt="" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100">
@@ -360,26 +360,26 @@
 
                 <!-- Play Button Overlay -->
                 <div class="absolute inset-0 flex items-center justify-center">
-                    <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <div class="w-12 h-12 rounded-full bg-primary-600 text-white flex items-center justify-center shadow-lg shadow-primary-600/30 group-hover:scale-110 transition-transform duration-300">
                         <i data-icon aria-hidden="true" class="fa-solid fa-play text-sm ml-0.5"></i>
                     </div>
                 </div>
 
                 <!-- Top Metric Badge -->
                 <div class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-black/60 backdrop-blur-md border border-white/10 text-[11px] font-semibold text-white">
-                    <i aria-hidden="true" class="fa-solid fa-fire text-zinc-300 mr-1"></i> <span data-metric></span>
+                    <i aria-hidden="true" class="fa-solid fa-fire text-secondary-400 mr-1"></i> <span data-metric></span>
                 </div>
             </div>
 
             <!-- Card Information -->
             <div class="p-5">
                 <span data-client class="text-[11px] font-semibold text-zinc-400 tracking-wide uppercase"></span>
-                <h3 data-title class="text-base font-bold text-white group-hover:text-zinc-300 transition-colors mt-0.5 line-clamp-1"></h3>
+                <h3 data-title class="text-base font-bold text-white group-hover:text-primary-400 transition-colors mt-0.5 line-clamp-1"></h3>
                 <p data-desc class="text-xs text-zinc-400 mt-2 line-clamp-2"></p>
             </div>
 
             <!-- Botão invisível que cobre o card inteiro: clicável e acessível por teclado -->
-            <button data-play type="button" class="absolute inset-0 z-10 rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-white"></button>
+            <button data-play type="button" class="absolute inset-0 z-10 rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500"></button>
         </article>
     </template>
 </body>
